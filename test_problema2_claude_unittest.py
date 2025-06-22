@@ -3,7 +3,9 @@ from unittest.mock import patch
 from problema2_claude import Fraction, ComparaSequenze
 
 def calcola_meta_minore(sequenzaA):
-    return sum(sequenzaA) / 2 if sequenzaA else 0.0
+    if not sequenzaA:
+        return 0.0
+    return sum(sequenzaA) / 2
 
 class TestComparaSequenze(unittest.TestCase):
     def testAcquisisciSequenzaRealiNotNull(self):
